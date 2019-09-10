@@ -1,0 +1,18 @@
+﻿@using BoardGameStore.Models
+@using BoardGameStore.HtmlHelpers
+@using LibraryBoardGameStore.Entites
+
+
+@model BoardGameStore.Models.GamesListViewModel
+
+@{
+    ViewBag.Title = "List";
+}
+
+@foreach (var p in @Model.Games)
+{
+       @Html.Partial("BoardGameSummary", p);
+}
+<div class="btn-group pull-right" style="font-size:12px;">
+    @Html.PageLinks(Model.GetPagingInfo, x => Url.Action("List", new { page = x, category = Model.CurrentCategory }))
+    </div>
