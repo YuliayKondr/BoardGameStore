@@ -4,6 +4,9 @@ using System.Drawing.Imaging;
 using System.IO;
 namespace LibraryBoardGameStore.WorkImage
 {
+    /// <summary>
+    /// Класс работающий с изображением. Преобразует изображение в байты
+    /// </summary>
     public static class WImage
     {
         public static byte[] CreateCopy(string file)
